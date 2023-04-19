@@ -1,18 +1,30 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.baishou.appsignature</id>
-    <name>app-signature Template</name>
-    <vendor>baishou</vendor>
+    <id>com.arnold.signature</id>
+    <name>APP_SIGNATURE</name>
+    <vendor>arnold</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.baishou.appsignature.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <toolWindow factoryClass="com.arnold.signature.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.baishou.appsignature.listeners.MyFrameStateListener" topic="com.intellij.ide.FrameStateListener"/>
+        <listener class="com.arnold.signature.listeners.MyFrameStateListener" topic="com.intellij.ide.FrameStateListener"/>
     </applicationListeners>
+    <actions>
+        <action id="signature.rightClick" class="com.arnold.signature.RightClickAction" text="签名"
+                description="右键签名">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="RefactoringMenu"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt L"/>
+        </action>
+
+        <action id="signature.editConfigClick" class="com.arnold.signature.EditConfigAction" text="编辑签名"
+                description="编辑签名参数">
+            <add-to-group group-id="EditMenu" anchor="first"/>
+        </action>
+    </actions>
 </idea-plugin>

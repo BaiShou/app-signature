@@ -1,4 +1,4 @@
-package com.github.baishou.appsignature
+package com.arnold.signature
 
 import com.intellij.DynamicBundle
 import org.jetbrains.annotations.NonNls

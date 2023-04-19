@@ -1,5 +1,6 @@
-package com.github.baishou.appsignature.toolWindow
+package com.arnold.signature.toolWindow
 
+import com.arnold.signature.MyBundle
 import com.intellij.openapi.components.service
 import com.intellij.openapi.diagnostic.thisLogger
 import com.intellij.openapi.project.Project
@@ -8,15 +9,13 @@ import com.intellij.openapi.wm.ToolWindowFactory
 import com.intellij.ui.components.JBLabel
 import com.intellij.ui.components.JBPanel
 import com.intellij.ui.content.ContentFactory
-import com.github.baishou.appsignature.MyBundle
-import com.github.baishou.appsignature.services.MyProjectService
+import com.arnold.signature.services.MyProjectService
 import javax.swing.JButton
 
 
 class MyToolWindowFactory : ToolWindowFactory {
 
     init {
-        thisLogger().warn("Don't forget to remove all non-needed sample code files with their corresponding registration entries in `plugin.xml`.")
     }
 
     private val contentFactory = ContentFactory.SERVICE.getInstance()
