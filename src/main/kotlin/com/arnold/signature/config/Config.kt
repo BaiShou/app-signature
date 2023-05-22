@@ -6,5 +6,6 @@ object Config {
     val PASSWORD: String = "password";
     val ALIAS: String = "alias";
     val ALIASPASSWORD: String = "aliasPassword";
+    val TINY_API_KEY: String = "tiny_api_key";
 
 }

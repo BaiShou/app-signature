@@ -13,7 +13,8 @@
     </extensions>
 
     <applicationListeners>
-        <listener class="com.arnold.signature.listeners.MyFrameStateListener" topic="com.intellij.ide.FrameStateListener"/>
+        <listener class="com.arnold.signature.listeners.MyFrameStateListener"
+                  topic="com.intellij.ide.FrameStateListener"/>
     </applicationListeners>
     <actions>
         <action id="signature.rightClick" class="com.arnold.signature.RightClickAction" text="签名"
@@ -25,6 +26,16 @@
         <action id="signature.editConfigClick" class="com.arnold.signature.EditConfigAction" text="编辑签名"
                 description="编辑签名参数">
             <add-to-group group-id="EditMenu" anchor="first"/>
+        </action>
+        <action id="tiny.editConfigClick" class="com.arnold.tiny.EditConfigAction" text="Tiny Key"
+                description="编辑压缩图片key">
+            <add-to-group group-id="EditMenu" anchor="first"/>
+        </action>
+
+        <action id="tiny.RightSelectedAction"
+                class="com.arnold.tiny.RightSelectedAction" text="压缩图片"
+                description="压缩图片">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="RefactoringMenu"/>
         </action>
     </actions>
 </idea-plugin>

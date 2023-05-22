@@ -25,9 +25,14 @@ public class SignatureConfigView extends JDialog {
     private JTextField aliasPasswordTextField;
     private JButton submit;
     private JPanel contentPane;
-
+    private DialogCallback callback;
 
     public SignatureConfigView() {
+        this(null);
+    }
+
+    public SignatureConfigView(DialogCallback callback) {
+        this.callback = callback;
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(submit);
@@ -97,6 +102,12 @@ public class SignatureConfigView extends JDialog {
                 new Notification("ProjectViewPopupMenu", "提示", "保存成功", NotificationType.INFORMATION)
         );
         dispose();
+    }
+
+    public interface DialogCallback {
+        void onOkBtnClicked(String tinyPngKey);
+
+        void onCancelBtnClicked();
     }
 
     {
