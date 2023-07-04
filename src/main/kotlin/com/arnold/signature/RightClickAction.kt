@@ -1,7 +1,7 @@
 package com.arnold.signature
 
+import com.arnold.help.checkApkFile
 import com.arnold.signature.config.Config
-import com.arnold.signature.help.checkApkFile
 import com.arnold.signature.help.signature
 import com.arnold.signature.ui.SignatureConfigView
 import com.intellij.ide.util.PropertiesComponent
@@ -51,7 +51,7 @@ class RightClickAction : AnAction() {
         Messages.showWarningDialog(labelTitle, "来自签名提示")
 
         SignatureConfigView(object : SignatureConfigView.DialogCallback {
-            override fun onOkBtnClicked(tinyPngKey: String) {
+            override fun onOkBtnClicked() {
                 checkSignatureConfig(e, file)
             }
 

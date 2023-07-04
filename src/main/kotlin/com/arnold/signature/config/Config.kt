@@ -7,5 +7,7 @@ object Config {
     val ALIAS: String = "alias";
     val ALIASPASSWORD: String = "aliasPassword";
     val TINY_API_KEY: String = "tiny_api_key";
+    val CHANNEL: String = "channel";
+    val WALLE_PATH: String = "walle_path";
 
 }

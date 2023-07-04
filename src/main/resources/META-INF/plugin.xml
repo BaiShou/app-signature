@@ -11,6 +11,12 @@
     <extensions defaultExtensionNs="com.intellij">
         <toolWindow factoryClass="com.arnold.signature.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
     </extensions>
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <!-- displayType只有这四种类型, id 在一个插件内不能重复,isLogByDefault表示是否在 Event Log 中记录 -->
+        <notificationGroup displayType="BALLOON" id="arnold.notification.balloon" isLogByDefault="false"/>
+    </extensions>
+
 
     <applicationListeners>
         <listener class="com.arnold.signature.listeners.MyFrameStateListener"
@@ -27,6 +33,8 @@
                 description="编辑签名参数">
             <add-to-group group-id="EditMenu" anchor="first"/>
         </action>
+
+        <!--        压缩图片-->
         <action id="tiny.editConfigClick" class="com.arnold.tiny.EditConfigAction" text="Tiny Key"
                 description="编辑压缩图片key">
             <add-to-group group-id="EditMenu" anchor="first"/>
@@ -36,6 +44,17 @@
                 class="com.arnold.tiny.RightSelectedAction" text="压缩图片"
                 description="压缩图片">
             <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="RefactoringMenu"/>
+        </action>
+
+
+        <action id="channel.rightClick" class="com.arnold.channel.RightClickAction" text="插入渠道"
+                description="右键插入渠道">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="RefactoringMenu"/>
+        </action>
+
+        <action id="channel.editChannelClick" class="com.arnold.channel.EditChannelAction" text="channel"
+                description="渠道信息">
+            <add-to-group group-id="EditMenu" anchor="first"/>
         </action>
     </actions>
 </idea-plugin>

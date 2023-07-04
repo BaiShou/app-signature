@@ -1,4 +1,4 @@
-package com.arnold.signature.help
+package com.arnold.help
 
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.CommonDataKeys

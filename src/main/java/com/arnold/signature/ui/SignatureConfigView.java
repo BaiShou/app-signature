@@ -1,5 +1,6 @@
 package com.arnold.signature.ui;
 
+import com.arnold.NotificationUtil;
 import com.arnold.signature.config.Config;
 import com.intellij.ide.util.PropertiesComponent;
 import com.intellij.notification.Notification;
@@ -54,6 +55,9 @@ public class SignatureConfigView extends JDialog {
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 dispose();
+                if (callback != null) {
+                    callback.onCancelBtnClicked();
+                }
             }
         });
 
@@ -86,9 +90,7 @@ public class SignatureConfigView extends JDialog {
                 StringUtil.isEmpty(alias) ||
                 StringUtil.isEmpty(aliasPassword)
         ) {
-            Notifications.Bus.notify(
-                    new Notification("ProjectViewPopupMenu", "警告", "参数不能为空", NotificationType.INFORMATION)
-            );
+            NotificationUtil.warning("参数不能为空");
             return;
         }
 
@@ -98,14 +100,16 @@ public class SignatureConfigView extends JDialog {
         propertiesComponent.setValue(Config.INSTANCE.getPASSWORD(), password);
         propertiesComponent.setValue(Config.INSTANCE.getALIAS(), alias);
         propertiesComponent.setValue(Config.INSTANCE.getALIASPASSWORD(), aliasPassword);
-        Notifications.Bus.notify(
-                new Notification("ProjectViewPopupMenu", "提示", "保存成功", NotificationType.INFORMATION)
-        );
+        NotificationUtil.info("保存成功");
+        if (callback != null) {
+            callback.onOkBtnClicked();
+        }
+
         dispose();
     }
 
     public interface DialogCallback {
-        void onOkBtnClicked(String tinyPngKey);
+        void onOkBtnClicked();
 
         void onCancelBtnClicked();
     }
