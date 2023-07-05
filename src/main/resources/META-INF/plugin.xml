@@ -26,13 +26,14 @@
         <action id="signature.rightClick" class="com.arnold.signature.RightClickAction" text="签名"
                 description="右键签名">
             <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="RefactoringMenu"/>
-            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt L"/>
         </action>
 
-        <action id="signature.editConfigClick" class="com.arnold.signature.EditConfigAction" text="编辑签名"
-                description="编辑签名参数">
+
+        <group id="signatureMenu" text="signature" popup="true">
             <add-to-group group-id="EditMenu" anchor="first"/>
-        </action>
+            <action id="signature.editConfigClick" class="com.arnold.signature.EditConfigAction" text="编辑签名" description="编辑签名参数"/>
+            <action id="signature.selectApkSignatureAction" class="com.arnold.signature.SelectApkSignatureAction" text="签名APK" description="选择apk进行签名"/>
+        </group>
 
         <!--        压缩图片-->
         <action id="tiny.editConfigClick" class="com.arnold.tiny.EditConfigAction" text="Tiny Key"

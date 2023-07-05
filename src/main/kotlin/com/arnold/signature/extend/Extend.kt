@@ -1,5 +1,6 @@
 package com.arnold.signature.extend
 
+import com.intellij.openapi.util.text.StringUtil
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
@@ -26,7 +27,9 @@ fun Process.text(): String {
     while (null!=line) {
         // 逐行读取shell输出，并保存到变量output
         line = bufReader.readLine()
-        output += line +"\n"
+        if (!StringUtil.isEmpty(line)) {
+            output += line + "\n"
+        }
     }
     return output
 }

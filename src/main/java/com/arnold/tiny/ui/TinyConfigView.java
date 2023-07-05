@@ -35,7 +35,7 @@ public class TinyConfigView extends JDialog {
         setModal(true);
         getRootPane().setDefaultButton(submit);
         setTitle("签名参数编辑");
-        setLocation(400, 200);//距离屏幕左上角的其实位置
+        setLocation(500, 200);//距离屏幕左上角的其实位置
         setSize(500, 200);//对话框的长宽
 
         initData();
