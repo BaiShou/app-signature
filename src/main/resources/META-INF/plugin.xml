@@ -14,7 +14,7 @@
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
         <!-- displayType只有这四种类型, id 在一个插件内不能重复,isLogByDefault表示是否在 Event Log 中记录 -->
-        <notificationGroup displayType="BALLOON" id="arnold.notification.balloon" isLogByDefault="false"/>
+        <notificationGroup displayType="BALLOON" id="arnold.notification.balloon" key="notification.group.name"/>
     </extensions>
 
 

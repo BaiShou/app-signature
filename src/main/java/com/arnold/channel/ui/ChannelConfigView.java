@@ -1,7 +1,6 @@
 package com.arnold.channel.ui;
 
 import com.arnold.NotificationUtil;
-import com.arnold.PluginFileUtil;
 import com.arnold.signature.config.Config;
 import com.intellij.ide.util.PropertiesComponent;
 import com.intellij.openapi.util.text.StringUtil;
@@ -28,7 +27,7 @@ public class ChannelConfigView extends JDialog {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(save);
-        setTitle("签名参数编辑");
+        setTitle("渠道参数编辑");
         setLocation(400, 200);//距离屏幕左上角的其实位置
         setSize(500, 300);//对话框的长宽
 
