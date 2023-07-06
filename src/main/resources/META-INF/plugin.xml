@@ -23,39 +23,26 @@
                   topic="com.intellij.ide.FrameStateListener"/>
     </applicationListeners>
     <actions>
-        <action id="signature.rightClick" class="com.arnold.signature.RightClickAction" text="签名"
-                description="右键签名">
-            <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="RefactoringMenu"/>
-        </action>
-
-
-        <group id="signatureMenu" text="signature" popup="true">
-            <add-to-group group-id="EditMenu" anchor="first"/>
-            <action id="signature.editConfigClick" class="com.arnold.signature.EditConfigAction" text="编辑签名" description="编辑签名参数"/>
-            <action id="signature.selectApkSignatureAction" class="com.arnold.signature.SelectApkSignatureAction" text="签名APK" description="选择apk进行签名"/>
+        <group id="arnold.rightClickPopupMenu" text="开发工具" popup="true">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="ReplaceInPath"/>
+            <action id="signature.rightClick" class="com.arnold.signature.RightClickAction" text="签名Apk"
+                    description="右键签名"/>
+            <action id="tiny.RightSelectedAction"
+                    class="com.arnold.tiny.RightSelectedAction" text="压缩图片"
+                    description="压缩图片"/>
+            <action id="channel.rightClick" class="com.arnold.channel.RightClickAction" text="插入渠道"
+                    description="右键插入渠道"/>
         </group>
 
-        <!--        压缩图片-->
-        <action id="tiny.editConfigClick" class="com.arnold.tiny.EditConfigAction" text="Tiny Key"
-                description="编辑压缩图片key">
+        <group id="arnold.signatureMenu" text="signature" popup="true">
             <add-to-group group-id="EditMenu" anchor="first"/>
-        </action>
+            <action id="signature.editConfigClick" class="com.arnold.signature.EditConfigAction" text="edit signature" description="编辑签名参数"/>
+            <action id="signature.selectApkSignatureAction" class="com.arnold.signature.SelectApkSignatureAction" text="signature Apk" description="选择apk进行签名"/>
+            <!-- 压缩图片KEY编辑-->
+            <action id="tiny.editConfigClick" class="com.arnold.tiny.EditConfigAction" text="Tiny Key" description="编辑压缩图片key"/>
+            <action id="channel.editChannelClick" class="com.arnold.channel.EditChannelAction" text="channel"
+                    description="渠道信息"/>
+        </group>
 
-        <action id="tiny.RightSelectedAction"
-                class="com.arnold.tiny.RightSelectedAction" text="压缩图片"
-                description="压缩图片">
-            <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="RefactoringMenu"/>
-        </action>
-
-
-        <action id="channel.rightClick" class="com.arnold.channel.RightClickAction" text="插入渠道"
-                description="右键插入渠道">
-            <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="RefactoringMenu"/>
-        </action>
-
-        <action id="channel.editChannelClick" class="com.arnold.channel.EditChannelAction" text="channel"
-                description="渠道信息">
-            <add-to-group group-id="EditMenu" anchor="first"/>
-        </action>
     </actions>
 </idea-plugin>
