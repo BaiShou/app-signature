@@ -23,7 +23,7 @@
                   topic="com.intellij.ide.FrameStateListener"/>
     </applicationListeners>
     <actions>
-        <group id="arnold.rightClickPopupMenu" text="开发工具" popup="true">
+        <group id="arnold.rightClickPopupMenu" text="Pagoda Tools" popup="true">
             <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="ReplaceInPath"/>
             <action id="signature.rightClick" class="com.arnold.signature.RightClickAction" text="签名Apk"
                     description="右键签名"/>
@@ -34,14 +34,16 @@
                     description="右键插入渠道"/>
         </group>
 
-        <group id="arnold.signatureMenu" text="signature" popup="true">
+        <group id="arnold.signatureMenu" text="Pagoda Config" popup="true">
             <add-to-group group-id="EditMenu" anchor="first"/>
-            <action id="signature.editConfigClick" class="com.arnold.signature.EditConfigAction" text="edit signature" description="编辑签名参数"/>
-            <action id="signature.selectApkSignatureAction" class="com.arnold.signature.SelectApkSignatureAction" text="signature Apk" description="选择apk进行签名"/>
+            <action id="signature.editConfigClick" class="com.arnold.signature.EditConfigAction" text="Edit Signature" description="编辑签名参数"/>
+            <action id="signature.selectApkSignatureAction" class="com.arnold.signature.SelectApkSignatureAction" text="Signature Apk" description="选择apk进行签名"/>
             <!-- 压缩图片KEY编辑-->
             <action id="tiny.editConfigClick" class="com.arnold.tiny.EditConfigAction" text="Tiny Key" description="编辑压缩图片key"/>
-            <action id="channel.editChannelClick" class="com.arnold.channel.EditChannelAction" text="channel"
-                    description="渠道信息"/>
+            <action id="channel.editChannelClick" class="com.arnold.channel.EditChannelAction" text="Edit Channel"
+                    description="编辑渠道信息"/>
+            <action id="channel.selectApkChannelClick" class="com.arnold.channel.SelectApkChannelAction" text="Channel Apk"
+                    description="选择APK进行渠道打包"/>
         </group>
 
     </actions>

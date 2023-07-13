@@ -6,11 +6,9 @@ import com.intellij.openapi.util.text.StringUtil;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.event.*;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
 import java.io.File;
 
-public class SelectApkDialogView extends JDialog {
+public class SelectApkSignatureDialogView extends JDialog {
     private JPanel contentPane;
     private JButton cancel;
     private JButton submit;
@@ -18,16 +16,16 @@ public class SelectApkDialogView extends JDialog {
     private JButton btnSelect;
     private DialogCallback callback;
 
-    public SelectApkDialogView() {
+    public SelectApkSignatureDialogView() {
         this(null);
     }
 
-    public SelectApkDialogView(DialogCallback callback) {
+    public SelectApkSignatureDialogView(DialogCallback callback) {
         this.callback = callback;
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(submit);
-        setTitle("选择签名Apk");
+        setTitle("选择Apk进行签名");
         setLocation(500, 200);//距离屏幕左上角的其实位置
         setSize(500, 200);//对话框的长宽
 
@@ -106,7 +104,7 @@ public class SelectApkDialogView extends JDialog {
     }
 
     public static void main(String[] args) {
-        SelectApkDialogView dialog = new SelectApkDialogView();
+        SelectApkSignatureDialogView dialog = new SelectApkSignatureDialogView();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);

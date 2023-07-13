@@ -8,7 +8,7 @@ import com.intellij.openapi.vfs.VirtualFile
 import java.io.IOException
 
 fun channel(project: Project?,
-            apKFiles: VirtualFile,
+            apkPath: String,
             channel: String,
             wallePath: String,
             successAction: (() -> Unit)? = null,
@@ -17,7 +17,7 @@ fun channel(project: Project?,
     project?.asyncTask(hintText = "正在渠道打包", runAction = {
 
 
-        val shell = "java -jar $wallePath batch -c $channel  ${apKFiles.path}"
+        val shell = "java -jar $wallePath batch -c $channel  ${apkPath}"
         val process = shell.execute()
         val exitCode = process.waitFor()
         if (exitCode != 0) {

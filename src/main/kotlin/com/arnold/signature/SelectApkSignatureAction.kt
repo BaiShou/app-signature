@@ -2,7 +2,7 @@ package com.arnold.signature
 
 import com.arnold.signature.config.Config
 import com.arnold.signature.help.signature
-import com.arnold.signature.ui.SelectApkDialogView
+import com.arnold.signature.ui.SelectApkSignatureDialogView
 import com.arnold.signature.ui.SignatureConfigView
 import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.actionSystem.AnAction
@@ -10,11 +10,11 @@ import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.util.text.StringUtil
 
-class SelectApkSignatureAction : AnAction(), SelectApkDialogView.DialogCallback {
+class SelectApkSignatureAction : AnAction(), SelectApkSignatureDialogView.DialogCallback {
     var e: AnActionEvent? = null;
     override fun actionPerformed(e: AnActionEvent) {
         this.e = e
-        SelectApkDialogView(this).isVisible = true
+        SelectApkSignatureDialogView(this).isVisible = true
     }
 
     override fun onOkBtnClicked(apkPath: String) {
