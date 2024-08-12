@@ -1,1 +1,1 @@
-rootProject.name = "app-signature"
+rootProject.name = "app-tools"
