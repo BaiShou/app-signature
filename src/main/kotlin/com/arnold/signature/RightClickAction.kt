@@ -40,7 +40,7 @@ class RightClickAction : AnAction() {
         signature(project = getEventProject(e), file.path, buildToolsPath, keyStorePath, password, alias, aliasPassword, successAction = {
             Messages.showWarningDialog("签名成功", "来自签名提示")
         }, failAction = { error ->
-            Messages.showWarningDialog("签名失败", "来自签名提示")
+            Messages.showWarningDialog("签名失败", "来自签名提示:\n${error}")
         })
     }
 
